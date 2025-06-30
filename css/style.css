@@ -1,7 +1,7 @@
 body {
   position: relative; /* important pour le pseudo-élément */
   font-family: 'Segoe UI', sans-serif;
-  background-image: url('https://amnaell.github.io/css/bg.jpg');
+  background-image: url('https://BBS-Checklist.github.io/css/bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
