@@ -1,29 +1,3 @@
-
-const units = [
-  {
-    id: 1,
-    name: "Ichigo Kurosaki - Final Getsuga Tenshou",
-    attribute: "Power",
-    rarity: "6★",
-    image: "https://via.placeholder.com/100x100?text=Ichigo"
-  },
-  {
-    id: 2,
-    name: "Rukia Kuchiki - Bankai",
-    attribute: "Speed",
-    rarity: "6★",
-    image: "https://via.placeholder.com/100x100?text=Rukia"
-  },
-  {
-    id: 3,
-    name: "Byakuya Kuchiki - TYBW",
-    attribute: "Mind",
-    rarity: "6★",
-    image: "https://via.placeholder.com/100x100?text=Byakuya"
-  }
-];
-
-const unitList = document.getElementById("unit-list");
 let ownedUnits = JSON.parse(localStorage.getItem("bbs_owned_units")) || [];
 
 function toggleUnit(id) {
@@ -34,24 +8,48 @@ function toggleUnit(id) {
   }
   localStorage.setItem("bbs_owned_units", JSON.stringify(ownedUnits));
   renderUnits();
+  updateProgress();
 }
 
 function renderUnits() {
-  unitList.innerHTML = "";
-  units.forEach(unit => {
-    const div = document.createElement("div");
-    div.className = \`rounded-xl shadow p-4 flex items-center gap-4 border-2 cursor-pointer transition \${ownedUnits.includes(unit.id) ? "border-green-500 bg-green-50" : "border-gray-300"}\`;
-    div.onclick = () => toggleUnit(unit.id);
+  const container = document.getElementById("unit-list");
+  container.innerHTML = "";
 
-    div.innerHTML = \`
-      <img src="\${unit.image}" alt="\${unit.name}" class="w-16 h-16 rounded object-cover" />
-      <div>
-        <div class="font-semibold">\${unit.name}</div>
-        <div class="text-sm text-gray-600">\${unit.attribute} • \${unit.rarity}</div>
-      </div>
-    \`;
-    unitList.appendChild(div);
+  const selectedAttr = document.getElementById("attributeFilter").value;
+  const filtered = selectedAttr === "All"
+    ? units
+    : units.filter(unit => unit.attribute === selectedAttr);
+
+  filtered.forEach(unit => {
+    const card = document.createElement("div");
+    card.className = `unit-card border-2 rounded-xl p-2 cursor-pointer text-center transition ${
+      ownedUnits.includes(unit.id) ? "selected" : "border-gray-700"
+    }`;
+    card.onclick = () => toggleUnit(unit.id);
+
+    card.innerHTML = `
+      <img src="${unit.image}" alt="${unit.name}" class="w-full rounded mb-2" />
+      <div class="text-xs font-semibold">${unit.name}</div>
+      <div class="text-xs text-gray-400">${unit.attribute} • ${unit.rarity}</div>
+    `;
+
+    container.appendChild(card);
   });
 }
 
-renderUnits();
+function updateProgress() {
+  const progressBar = document.getElementById("progressBar");
+  const progressLabel = document.getElementById("progressLabel");
+  const total = units.length;
+  const owned = ownedUnits.length;
+  const percent = Math.round((owned / total) * 100);
+  progressBar.style.width = percent + "%";
+  progressLabel.textContent = `${owned}/${total} (${percent}%)`;
+}
+
+document.getElementById("attributeFilter").addEventListener("change", renderUnits);
+
+window.addEventListener("DOMContentLoaded", () => {
+  renderUnits();
+  updateProgress();
+});
