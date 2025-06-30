@@ -1,5 +1,5 @@
 // Génération dynamique du tableau units avec 772 unités (exemple d'attributs en boucle)
-const baseImageUrl = "https://github.com/Amnaell/BBS-Checklist.github.io/tree/main/Images";
+const baseImageUrl = "https://github.com/Amnaell/BBS-Checklist.github.io/Images";
 
 const attributes = ["Force", "Instinct", "Connaissance", "Technique", "Vitesse"];
 const units = [];
