@@ -26,7 +26,3 @@ body > * {
   position: relative;
   z-index: 1; /* contenu au-dessus de l’overlay */
 }
-
-footer {
-  color: white;
-}
