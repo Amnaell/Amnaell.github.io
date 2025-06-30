@@ -53,3 +53,17 @@ window.addEventListener("DOMContentLoaded", () => {
   renderUnits();
   updateProgress();
 });
+
+const unitList = document.getElementById("unit-list");
+
+units.forEach(unit => {
+  const card = document.createElement("div");
+  card.className = "unit-card border p-2 rounded text-center bg-gray-800 text-white cursor-pointer";
+  card.onclick = () => toggleUnit(unit.id);
+  card.innerHTML = `
+    <img src="${unit.image}" alt="${unit.name}" class="w-full rounded mb-2" />
+    <div class="text-xs font-bold">${unit.name}</div>
+    <div class="text-xs text-gray-400">${unit.attribute} • ${unit.rarity}</div>
+  `;
+  unitList.appendChild(card);
+});
