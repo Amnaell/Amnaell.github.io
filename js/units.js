@@ -9,686 +9,686 @@ const units = [
   image: baseImageUrl + "001.png"
 },
 {
-  id: 002,
+  id: 2,
   name: "002",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "002.png"
 },
 {
-  id: 003,
+  id: 3,
   name: "003",
   attribute: "Connaissance",
   rarity: "6★",
   image: baseImageUrl + "003.png"
 },
 {
-  id: 004,
+  id: 4,
   name: "004",
   attribute: "Force",
   rarity: "6★",
   image: baseImageUrl + "004.png"
 },
 {
-  id: 005,
+  id: 5,
   name: "005",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "005.png"
 },
 {
-  id: 006,
+  id: 6,
   name: "006",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "006.png"
 },
 {
-  id: 007,
+  id: 7,
   name: "007",
   attribute: "Vitesse",
   rarity: "6★",
   image: baseImageUrl + "007.png"
 },
 {
-  id: 008,
+  id: 8,
   name: "008",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "008.png"
 },
 {
-  id: 009,
+  id: 9,
   name: "009",
   attribute: "Connaissance",
   rarity: "6★",
   image: baseImageUrl + "009.png"
 },
 {
-  id: 010,
+  id: 10,
   name: "010",
   attribute: "Vitesse",
   rarity: "6★",
   image: baseImageUrl + "010.png"
 },
 {
-  id: 011,
+  id: 11,
   name: "011",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "011.png"
 },
 {
-  id: 012,
+  id: 12,
   name: "012",
   attribute: "Connaissance",
   rarity: "6★",
   image: baseImageUrl + "012.png"
 },
 {
-  id: 013,
+  id: 13,
   name: "013",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "013.png"
 },
 {
-  id: 014,
+  id: 14,
   name: "014",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "014.png"
 },
 {
-  id: 015,
+  id: 15,
   name: "015",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "015.png"
 },
 {
-  id: 016,
+  id: 16,
   name: "016",
   attribute: "Connaissance",
   rarity: "6★",
   image: baseImageUrl + "016.png"
 },
 {
-  id: 017,
+  id: 17,
   name: "017",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "017.png"
 },
 {
-  id: 018,
+  id: 18,
   name: "018",
   attribute: "Connaissance",
   rarity: "6★",
   image: baseImageUrl + "018.png"
 },
 {
-  id: 019,
+  id: 19,
   name: "019",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "019.png"
 },
 {
-  id: 020,
+  id: 20,
   name: "020",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "020.png"
 },
 {
-  id: 021,
+  id: 21,
   name: "021",
   attribute: "Force",
   rarity: "6★",
   image: baseImageUrl + "021.png"
 },
 {
-  id: 022,
+  id: 22,
   name: "022",
   attribute: "Force",
   rarity: "6★",
   image: baseImageUrl + "022.png"
 },
 {
-  id: 023,
+  id: 23,
   name: "023",
   attribute: "Force",
   rarity: "6★",
   image: baseImageUrl + "023.png"
 },
 {
-  id: 024,
+  id: 24,
   name: "024",
   attribute: "Vitesse",
   rarity: "6★",
   image: baseImageUrl + "024.png"
 },
 {
-  id: 025,
+  id: 25,
   name: "025",
   attribute: "Force",
   rarity: "6★",
   image: baseImageUrl + "025.png"
 },
 {
-  id: 026,
+  id: 26,
   name: "026",
   attribute: "Vitesse",
   rarity: "6★",
   image: baseImageUrl + "026.png"
 },
 {
-  id: 027,
+  id: 27,
   name: "027",
   attribute: "Vitesse",
   rarity: "6★",
   image: baseImageUrl + "027.png"
 },
 {
-  id: 028,
+  id: 28,
   name: "028",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "028.png"
 },
 {
-  id: 029,
+  id: 29,
   name: "029",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "029.png"
 },
 {
-  id: 030,
+  id: 30,
   name: "030",
   attribute: "Vitesse",
   rarity: "6★",
   image: baseImageUrl + "030.png"
 },
 {
-  id: 031,
+  id: 31,
   name: "031",
   attribute: "Force",
   rarity: "6★",
   image: baseImageUrl + "031.png"
 },
 {
-  id: 032,
+  id: 32,
   name: "032",
   attribute: "Connaissance",
   rarity: "6★",
   image: baseImageUrl + "032.png"
 },
 {
-  id: 033,
+  id: 33,
   name: "033",
   attribute: "Connaissance",
   rarity: "6★",
   image: baseImageUrl + "033.png"
 },
 {
-  id: 034,
+  id: 34,
   name: "034",
   attribute: "Vitesse",
   rarity: "6★",
   image: baseImageUrl + "034.png"
 },
 {
-  id: 035,
+  id: 35,
   name: "035",
   attribute: "Force",
   rarity: "6★",
   image: baseImageUrl + "035.png"
 },
 {
-  id: 036,
+  id: 36,
   name: "036",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "036.png"
 },
 {
-  id: 037,
+  id: 37,
   name: "037",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "037.png"
 },
 {
-  id: 038,
+  id: 38,
   name: "038",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "038.png"
 },
 {
-  id: 039,
+  id: 39,
   name: "039",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "039.png"
 },
 {
-  id: 040,
+  id: 40,
   name: "040",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "040.png"
 },
 {
-  id: 041,
+  id: 41,
   name: "041",
   attribute: "Connaissance",
   rarity: "6★",
   image: baseImageUrl + "041.png"
 },
 {
-  id: 042,
+  id: 42,
   name: "042",
   attribute: "Force",
   rarity: "6★",
   image: baseImageUrl + "042.png"
 },
 {
-  id: 043,
+  id: 43,
   name: "043",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "043.png"
 },
 {
-  id: 044,
+  id: 44,
   name: "044",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "044.png"
 },
 {
-  id: 045,
+  id: 45,
   name: "045",
   attribute: "Connaissance",
   rarity: "6★",
   image: baseImageUrl + "045.png"
 },
 {
-  id: 046,
+  id: 46,
   name: "046",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "046.png"
 },
 {
-  id: 047,
+  id: 47,
   name: "047",
   attribute: "Force",
   rarity: "6★",
   image: baseImageUrl + "047.png"
 },
 {
-  id: 048,
+  id: 48,
   name: "048",
   attribute: "Vitesse",
   rarity: "6★",
   image: baseImageUrl + "048.png"
 },
 {
-  id: 049,
+  id: 49,
   name: "049",
   attribute: "Connaissance",
   rarity: "6★",
   image: baseImageUrl + "049.png"
 },
 {
-  id: 050,
+  id: 50,
   name: "050",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "050.png"
 },
 {
-  id: 051,
+  id: 51,
   name: "051",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "051.png"
 },
 {
-  id: 052,
+  id: 52,
   name: "052",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "052.png"
 },
 {
-  id: 053,
+  id: 53,
   name: "053",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "053.png"
 },
 {
-  id: 054,
+  id: 54,
   name: "054",
   attribute: "Vitesse",
   rarity: "6★",
   image: baseImageUrl + "054.png"
 },
 {
-  id: 055,
+  id: 55,
   name: "055",
   attribute: "Connaissance",
   rarity: "6★",
   image: baseImageUrl + "055.png"
 },
 {
-  id: 056,
+  id: 56,
   name: "056",
   attribute: "Force",
   rarity: "6★",
   image: baseImageUrl + "056.png"
 },
 {
-  id: 057,
+  id: 57,
   name: "057",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "057.png"
 },
 {
-  id: 058,
+  id: 58,
   name: "058",
   attribute: "Force",
   rarity: "6★",
   image: baseImageUrl + "058.png"
 },
 {
-  id: 059,
+  id: 59,
   name: "059",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "059.png"
 },
 {
-  id: 060,
+  id: 60,
   name: "060",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "060.png"
 },
 {
-  id: 061,
+  id: 61,
   name: "061",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "061.png"
 },
 {
-  id: 062,
+  id: 62,
   name: "062",
   attribute: "Force",
   rarity: "6★",
   image: baseImageUrl + "062.png"
 },
 {
-  id: 063,
+  id: 63,
   name: "063",
   attribute: "Connaissance",
   rarity: "6★",
   image: baseImageUrl + "063.png"
 },
 {
-  id: 064,
+  id: 64,
   name: "064",
   attribute: "Vitesse",
   rarity: "6★",
   image: baseImageUrl + "064.png"
 },
 {
-  id: 065,
+  id: 65,
   name: "065",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "065.png"
 },
 {
-  id: 066,
+  id: 66,
   name: "066",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "066.png"
 },
 {
-  id: 067,
+  id: 67,
   name: "067",
   attribute: "Connaissance",
   rarity: "6★",
   image: baseImageUrl + "067.png"
 },
 {
-  id: 068,
+  id: 68,
   name: "068",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "068.png"
 },
 {
-  id: 069,
+  id: 69,
   name: "069",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "069.png"
 },
 {
-  id: 070,
+  id: 70,
   name: "070",
   attribute: "Connaissance",
   rarity: "6★",
   image: baseImageUrl + "070.png"
 },
 {
-  id: 071,
+  id: 71,
   name: "071",
   attribute: "Force",
   rarity: "6★",
   image: baseImageUrl + "071.png"
 },
 {
-  id: 072,
+  id: 72,
   name: "072",
   attribute: "Vitesse",
   rarity: "6★",
   image: baseImageUrl + "072.png"
 },
 {
-  id: 073,
+  id: 73,
   name: "073",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "073.png"
 },
 {
-  id: 074,
+  id: 74,
   name: "074",
   attribute: "Force",
   rarity: "6★",
   image: baseImageUrl + "074.png"
 },
 {
-  id: 075,
+  id: 75,
   name: "075",
   attribute: "Vitesse",
   rarity: "6★",
   image: baseImageUrl + "075.png"
 },
 {
-  id: 076,
+  id: 76,
   name: "076",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "076.png"
 },
 {
-  id: 077,
+  id: 77,
   name: "077",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "077.png"
 },
 {
-  id: 078,
+  id: 78,
   name: "078",
   attribute: "Connaissance",
   rarity: "6★",
   image: baseImageUrl + "078.png"
 },
 {
-  id: 079,
+  id: 79,
   name: "079",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "079.png"
 },
 {
-  id: 080,
+  id: 80,
   name: "080",
   attribute: "Vitesse",
   rarity: "6★",
   image: baseImageUrl + "080.png"
 },
 {
-  id: 081,
+  id: 81,
   name: "081",
   attribute: "Connaissance",
   rarity: "6★",
   image: baseImageUrl + "081.png"
 },
 {
-  id: 082,
+  id: 82,
   name: "082",
   attribute: "Force",
   rarity: "6★",
   image: baseImageUrl + "082.png"
 },
 {
-  id: 083,
+  id: 83,
   name: "083",
   attribute: "Connaissance",
   rarity: "6★",
   image: baseImageUrl + "083.png"
 },
 {
-  id: 084,
+  id: 84,
   name: "084",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "084.png"
 },
 {
-  id: 085,
+  id: 85,
   name: "085",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "085.png"
 },
 {
-  id: 086,
+  id: 86,
   name: "086",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "086.png"
 },
 {
-  id: 087,
+  id: 87,
   name: "087",
   attribute: "Force",
   rarity: "6★",
   image: baseImageUrl + "087.png"
 },
 {
-  id: 088,
+  id: 88,
   name: "088",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "088.png"
 },
 {
-  id: 089,
+  id: 89,
   name: "089",
   attribute: "Vitesse",
   rarity: "6★",
   image: baseImageUrl + "089.png"
 },
 {
-  id: 090,
+  id: 90,
   name: "090",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "090.png"
 },
 {
-  id: 091,
+  id: 91,
   name: "091",
   attribute: "Connaissance",
   rarity: "6★",
   image: baseImageUrl + "091.png"
 },
 {
-  id: 092,
+  id: 92,
   name: "092",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "092.png"
 },
 {
-  id: 093,
+  id: 93,
   name: "093",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "093.png"
 },
 {
-  id: 094,
+  id: 94,
   name: "094",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "094.png"
 },
 {
-  id: 095,
+  id: 95,
   name: "095",
   attribute: "Vitesse",
   rarity: "6★",
   image: baseImageUrl + "095.png"
 },
 {
-  id: 096,
+  id: 96,
   name: "096",
   attribute: "Force",
   rarity: "6★",
   image: baseImageUrl + "096.png"
 },
 {
-  id: 097,
+  id: 97,
   name: "097",
   attribute: "Vitesse",
   rarity: "6★",
   image: baseImageUrl + "097.png"
 },
 {
-  id: 098,
+  id: 98,
   name: "098",
   attribute: "Connaissance",
   rarity: "6★",
   image: baseImageUrl + "098.png"
 },
 {
-  id: 099,
+  id: 99,
   name: "099",
   attribute: "Instinct",
   rarity: "6★",
