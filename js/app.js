@@ -1,25 +1,32 @@
-// Génération dynamique du tableau units avec 772 unités (exemple d'attributs en boucle)
+// Données des unités (extrait, à compléter avec toutes tes unités)
 const baseImageUrl = "https://amnaell.github.io/Images/";
 
-const attributes = ["Force", "Instinct", "Connaissance", "Technique", "Vitesse"];
-const units = [];
-
-for (let i = 1; i <= 772; i++) {
-  const id = i;
-  const num = String(i).padStart(3, "0");
-  // Exemple : attribut choisi en fonction de l'index (à remplacer par tes vrais données)
-  const attribute = attributes[(i - 1) % attributes.length];
-
-  units.push({
-    id,
-    name: num,
-    attribute,
+const units = [
+  {
+    id: 1,
+    name: "001",
+    attribute: "Force",
     rarity: "6★",
-    image: `${baseImageUrl}${num}.png`
-  });
-}
+    image: baseImageUrl + "001.png"
+  },
+  {
+    id: 2,
+    name: "002",
+    attribute: "Instinct",
+    rarity: "6★",
+    image: baseImageUrl + "002.png"
+  },
+  {
+    id: 3,
+    name: "003",
+    attribute: "Connaissance",
+    rarity: "6★",
+    image: baseImageUrl + "003.png"
+  },
+  // ... ajoute les autres unités ici ...
+];
 
-// 🧠 Chargement des unités possédées depuis localStorage
+// 🧠 Chargement des unités possédées depuis le localStorage
 let ownedUnits = JSON.parse(localStorage.getItem("bbs_owned_units")) || [];
 
 // 🔄 Cocher/décocher une unité
@@ -56,7 +63,7 @@ function renderUnits() {
     card.onclick = () => toggleUnit(unit.id);
 
     card.innerHTML = `
-      <img src="${unit.image}" alt="Unit ${unit.name}" class="w-full rounded mb-2" />
+      <img src="${unit.image}" alt="${unit.name}" class="w-full rounded mb-2" />
       <div class="text-xs font-semibold">${unit.name}</div>
       <div class="text-xs text-gray-400">${unit.attribute} • ${unit.rarity}</div>
     `;
