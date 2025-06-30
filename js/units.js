@@ -2,7 +2,7 @@ const baseImageUrl = "https://amnaell.github.io/Images/";
 
 const units = [
 {
-  id: 001,
+  id: 1,
   name: "001",
   attribute: "Force",
   rarity: "6★",
