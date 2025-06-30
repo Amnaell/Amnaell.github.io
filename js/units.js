@@ -1,11 +1,5 @@
 const baseImageUrl = "https://amnaell.github.io/Images/";
 
-const units = [];
-
-for (let i = 1; i <= 772; i++) {
-  const id = i;
-  const num = String(i).padStart(3, "0");
-
 const units = [
 {
   id: 001,
