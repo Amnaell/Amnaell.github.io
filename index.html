@@ -8,20 +8,32 @@
   <!-- Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-  <!-- Scripts -->
-  <script defer src="units.js"></script>
-  <script defer src="app.js"></script>
-
   <style>
-    body { font-family: 'Segoe UI', sans-serif; }
-    .unit-card:hover { transform: scale(1.05); transition: transform 0.2s; }
-    .unit-card.selected { border-color: #10b981; background-color: #d1fae5; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .unit-card {
+      background-color: #1f2937; /* bg-gray-800 */
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .unit-card:hover {
+      transform: scale(1.05);
+    }
+
+    .unit-card.selected {
+      border-color: #10b981;
+      box-shadow: 0 0 10px #10b981;
+      background-color: #064e3b;
+    }
   </style>
 </head>
+
 <body class="bg-gray-900 text-white min-h-screen p-4">
   <header class="mb-6">
-    <h1 class="text-3xl font-bold text-green-400">Bleach Brave Souls - Checklist</h1>
-    <p class="text-sm text-gray-300 mb-2">Clique sur une unité pour l’ajouter ou la retirer de ta collection.</p>
+    <h1 class="text-3xl font-bold text-green-400">Bleach Brave Souls – Checklist</h1>
+    <p class="text-sm text-gray-300 mb-4">Clique sur une unité pour l’ajouter ou la retirer de ta collection.</p>
 
     <!-- Barre de progression -->
     <div class="mb-4">
@@ -31,9 +43,9 @@
       <p id="progressLabel" class="text-sm text-gray-300 mt-1 text-right">0/0 (0%)</p>
     </div>
 
-    <!-- Filtre -->
-    <div class="mb-4">
-      <label for="attributeFilter" class="text-sm">Filtrer par attribut :</label>
+    <!-- Filtres -->
+    <div class="mb-6">
+      <label for="attributeFilter" class="text-sm font-medium">Filtrer par attribut :</label>
       <select id="attributeFilter" class="ml-2 px-2 py-1 rounded text-black">
         <option value="All">Tous</option>
         <option value="Technique">Technique</option>
@@ -45,13 +57,15 @@
     </div>
   </header>
 
-  <!-- Liste des unités -->
+  <!-- Grille des personnages -->
   <main id="unit-list" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"></main>
 
   <footer class="mt-8 text-center text-sm text-gray-500">
     © <script>document.write(new Date().getFullYear());</script> BBS Checklist – Créé par Amnael & Kira.
   </footer>
+
+  <!-- Scripts -->
+  <script src="units.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
-<script src="units.js"></script>
-<script src="app.js"></script>
