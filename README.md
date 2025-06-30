@@ -1,9 +1,7 @@
-Bonjour, Bonsoir,
+# **6☆ Checklist**
 
-Bienvenue sur le premier Projet de "Checklist" pour le jeux Bleach Brave Soul !
+Assets are taken from the mobile game *Bleach Brave Souls*.
 
+All rights reserved by © KLabGames.
 
-
-Hello and good evening,
-
-Welcome to the first Checklist Project for Bleach Brave Soul!
+This is purely a fan-made project to serve as a progress checker for players.
