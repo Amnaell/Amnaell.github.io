@@ -5405,9 +5405,6 @@ const units = [
   rarity: "6★",
   image: baseImageUrl + "772.png"
 }
-]
-
-  // ... ajoute les autres unités ici ...
 ];
 
 // 🧠 Chargement des unités possédées depuis le localStorage
