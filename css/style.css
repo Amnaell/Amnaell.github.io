@@ -1,7 +1,28 @@
 body {
+  position: relative; /* important pour le pseudo-élément */
+  font-family: 'Segoe UI', sans-serif;
   background-image: url('https://amnaell.github.io/css/bg.jpg');
-  background-size: cover;       /* Pour que l'image couvre tout l'écran */
-  background-position: center;  /* Centrer l'image */
-  background-repeat: no-repeat; /* Ne pas répéter l'image */
-  background-attachment: fixed; /* Pour que l'image reste fixe au scroll (optionnel) */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  min-height: 100vh; /* pour s’assurer que le pseudo-élément couvre tout */
+}
+
+body::before {
+  content: "";
+  position: fixed; /* couvre tout l’écran */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* noir semi-transparent */
+  pointer-events: none; /* pour ne pas bloquer les clics */
+  z-index: 0; /* derrière tout le contenu */
+}
+
+body > * {
+  position: relative;
+  z-index: 1; /* contenu au-dessus de l’overlay */
 }
