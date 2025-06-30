@@ -1,98 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BBS Unit Checklist</title>
-
-  <link rel="icon" type="image/x-icon" href="bbs.ico">
-
-  <!-- Styles -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/flairs.css" />
-
-  <!-- Scripts -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="js/scripts.js"></script>
-  <script src="js/dom-to-image.js"></script>
-  <script src="js/FileSaver.js"></script>
-  <script src="js/lz-string.js"></script>
-
-  <meta name="description" content="Checklist de collection de personnages pour Bleach Brave Souls">
+  <meta charset="UTF-8" />
+  <title>BBS Checklist via GitHub Images</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script defer src="units.js"></script>
+  <script defer src="app.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-
-<body>
-  <noscript>Ce site nécessite JavaScript pour fonctionner.</noscript>
-
-  <header>
-    <h1 class="title">Bleach Brave Souls - Checklist</h1>
-    <p>Cocher les unités que vous possédez</p>
-  </header>
-
-  <!-- Compteurs -->
-  <div id="progress">
-    <span id="counter">0 unités cochées</span> |
-    <span id="progressPercent">0%</span>
-  </div>
-
-  <!-- Boutons principaux -->
-  <div class="buttons">
-    <button id="select-all">Tout sélectionner</button>
-    <button id="select-none">Réinitialiser</button>
-    <button id="generate" onclick="generateImage()">Générer une image</button>
-    <button onclick="toggleModal('importExportModal')">Importer / Exporter</button>
-  </div>
-
-  <!-- Modale d'import/export -->
-  <div class="modal" id="importExportModal" style="display:none;">
-    <div class="modal-container">
-      <div class="modal-header">
-        <h2>Import / Export de la checklist</h2>
-        <button onclick="toggleModal('importExportModal')">Fermer</button>
-      </div>
-      <div class="modal-body">
-        <p class="warning">⚠️ Importer remplacera votre checklist actuelle.</p>
-        <input type="text" id="import-text" placeholder="Coller ici pour importer" />
-        <button onclick="importSelection()">Appliquer</button>
-        <br>
-        <input type="text" id="export-text" readonly />
-        <button onclick="exportSelection()">Exporter</button>
-        <button onclick="copySelection()">Copier</button>
-        <div id="export-confirm" style="display:none;">✔ Copié !</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Liste des unités -->
-  <main id="unit-list" class="unit-grid">
-    <!-- Les unités seront injectées ici via JS -->
-  </main>
-
-  <footer>
-    <p>&copy; <script>document.write(new Date().getFullYear());</script> BBS Checklist. Créé avec ❤️ par la communauté.</p>
-  </footer>
-
-  <script>
-    // 👇 Simple JS pour gérer modales
-    function toggleModal(id) {
-      const modal = document.getElementById(id);
-      if (modal) {
-        modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
-      }
-    }
-
-    function copySelection() {
-      const text = document.getElementById('export-text');
-      text.select();
-      document.execCommand('copy');
-      document.getElementById('export-confirm').style.display = 'inline';
-      setTimeout(() => {
-        document.getElementById('export-confirm').style.display = 'none';
-      }, 1500);
-    }
-
-    // Tu ajouteras ici les fonctions import/export/unités selon ton JS
-  </script>
+<body class="bg-gray-900 text-white min-h-screen p-4">
+  <h1 class="text-2xl font-bold text-green-400 mb-4">BBS Checklist (Images via GitHub)</h1>
+  <main id="unit-list" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"></main>
 </body>
 </html>
