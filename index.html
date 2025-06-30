@@ -10,17 +10,34 @@
 
   <style>
     body {
+      position: relative;
       font-family: 'Segoe UI', sans-serif;
       background-image: url('https://amnaell.github.io/css/bg.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
-      color: white; /* pour s’assurer que le texte soit visible */
+      color: white;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body > * {
+      position: relative;
+      z-index: 1;
     }
 
     .unit-card {
-      background-color: #1f2937; /* bg-gray-800 */
+      background-color: #1f2937;
       transition: transform 0.2s ease-in-out;
     }
 
