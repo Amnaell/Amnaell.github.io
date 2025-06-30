@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Test Image BBS</title>
+  <style>
+    body {
+      background: #111;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+    img {
+      max-width: 200px;
+      border: 2px solid #10b981;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Test affichage image BBS</h1>
+
+  <p>Image via URL GitHub Pages :</p>
+  <img id="img1" src="https://amnaell.github.io/Images/001.png" alt="Unit 001 via GitHub Pages" />
+
+  <p>Image via URL raw GitHub :</p>
+  <img id="img2" src="https://raw.githubusercontent.com/Amnaell/Amnaell.github.io/main/Images/001.png" alt="Unit 001 via raw GitHub" />
+
+  <script>
+    // Test si images chargées ou erreurs
+    function checkImageLoad(imgId) {
+      const img = document.getElementById(imgId);
+      img.onerror = () => {
+        img.alt = "Erreur chargement image";
+        img.style.borderColor = "red";
+      };
+      img.onload = () => {
+        img.style.borderColor = "#10b981";
+      };
+    }
+
+    checkImageLoad("img1");
+    checkImageLoad("img2");
+  </script>
+
+</body>
+</html>
