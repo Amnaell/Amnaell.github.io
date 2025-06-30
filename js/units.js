@@ -5404,5 +5404,5 @@ const units = [
   attribute: "Vitesse",
   rarity: "6★",
   image: baseImageUrl + "772.png"
-},
+}
 ]
