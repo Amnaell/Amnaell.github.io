@@ -43,9 +43,11 @@ function toggleUnit(id) {
 // 🎮 Toggle FT
 function toggleFT(id) {
   if (!state[id]) state[id] = { owned: false, ft: false, spec: 1 };
+  state[id].owned = true; // ✅ FT active = perso possédé
   state[id].ft = !state[id].ft;
   saveState();
   renderUnits();
+  updateProgress();
 }
 
 // 🎮 Incrémentation spé
