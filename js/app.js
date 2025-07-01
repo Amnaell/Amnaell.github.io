@@ -1,5 +1,5 @@
 // 🔗 Base URL des images
-const baseImageUrl = "https://amnaell.github.io/BBS-Checklist.github.io/Images/";
+const baseImageUrl = "../Images/";
 const attributes = ["Force", "Instinct", "Connaissance", "Technique", "Vitesse"];
 const units = [];
 
