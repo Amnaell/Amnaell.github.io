@@ -101,18 +101,19 @@ body > * {
   transform: scale(1.05);          /* effet de mise en avant */
 }
 
-/* ✅ Base : gris pour tous */
+/* ✅ Tous les boutons mode gris par défaut */
 .mode-button {
-  background-color: #4b5563; /* gris-600 */
+  background-color: #4b5563; /* gris foncé */
   color: white;
+  opacity: 1;
 }
 
-/* ✅ Hover pour chaque bouton selon son ordre */
-.mode-button:hover:nth-of-type(1) { background-color: #2563eb; } /* bleu (normal) */
-.mode-button:hover:nth-of-type(2) { background-color: #7e22ce; } /* violet (FT) */
-.mode-button:hover:nth-of-type(3) { background-color: #facc15; color: black; } /* jaune (spe) */
+/* ✅ Couleur au hover selon l'ordre des boutons */
+.mode-button:hover:nth-of-type(1) { background-color: #2563eb; } /* bleu */
+.mode-button:hover:nth-of-type(2) { background-color: #7e22ce; } /* violet */
+.mode-button:hover:nth-of-type(3) { background-color: #facc15; color: black; } /* jaune */
 
-/* ✅ Actif : garde la couleur même sans hover */
+/* ✅ Quand un bouton est actif : même couleur que le hover */
 .mode-button.active:nth-of-type(1) { background-color: #2563eb; }
 .mode-button.active:nth-of-type(2) { background-color: #7e22ce; }
 .mode-button.active:nth-of-type(3) { background-color: #facc15; color: black; }
