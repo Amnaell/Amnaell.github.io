@@ -3,7 +3,7 @@ const attributes = ["Force", "Instinct", "Connaissance", "Technique", "Vitesse"]
 const units = [];
 
 // Génération dynamique des unités
-for (let i = 1; i <= 772; i++) {
+for (let i = 1; i <= 774; i++) {
   const id = i;
   const num = String(i).padStart(3, "0");
   const attribute = attributes[(i - 1) % attributes.length];
