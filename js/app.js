@@ -29,7 +29,6 @@ let currentMode = "default";
 
 function setMode(mode) {
   currentMode = mode;
-  alert(`Mode activé : ${mode === "default" ? "Normal" : mode.toUpperCase()}`);
 }
 
 // ✅ Clic sur un personnage
