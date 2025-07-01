@@ -123,15 +123,6 @@ function importCollection() {
   input.click();
 }
 
-// 📷 Générer une image PNG du site
-function generateImage() {
-  html2canvas(document.body).then(canvas => {
-    const link = document.createElement("a");
-    link.download = "bbs_checklist.png";
-    link.href = canvas.toDataURL("image/png");
-    link.click();
-  });
-}
 
 // 🚀 Initialisation
 window.addEventListener("DOMContentLoaded", () => {
