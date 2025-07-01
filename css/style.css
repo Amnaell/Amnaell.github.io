@@ -45,14 +45,37 @@ body > * {
   width: 110px;
   height: auto;
   margin: auto;
+  position: relative;
 }
 
+/* ✅ Mode possédé (doré) */
 .unit-card.selected {
   border-color: #FFD700; /* Or */
-  box-shadow: 0 0 10px #FFD700; /* halo doré */
-  background-color: #3b2f05; /* fond plus sombre pour contraste */
+  box-shadow: 0 0 10px #FFD700;
+  background-color: #3b2f05;
 }
 
+/* ✅ Mode FT (violet) */
+.unit-card.ft {
+  border-color: #a855f7;
+  box-shadow: 0 0 10px #a855f7;
+  background-color: #3b0f53;
+}
+
+/* ✅ Cocarde spé */
+.unit-card .spe-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background-color: #FFD700;
+  color: black;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 2px 5px;
+  border-radius: 9999px;
+}
+
+/* ✅ Hover */
 .unit-card:hover {
   transform: scale(1.05);
 }
