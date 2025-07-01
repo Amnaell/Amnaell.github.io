@@ -1,49 +1,51 @@
 body {
-  position: relative; /* important pour le pseudo-élément */
+  position: relative;
   font-family: 'Segoe UI', sans-serif;
-  background-image: url('https://github.com/Amnaell/BBS-Checklist.github.io/blob/main/css/bg.jpg');
+  background-image: url('https://amnaell.github.io/BBS-Checklist.github.io/css/bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: white;
-  min-height: 100vh; /* pour s’assurer que le pseudo-élément couvre tout */
+  min-height: 100vh;
 }
 
-background-image: url('https://github.com/Amnaell/BBS-Checklist.github.io/blob/main/css/bg.jpg');
+/* ✅ Supprimée : ligne incorrecte hors d’un sélecteur */
+/* background-image: url('https://github.com/...'); */
 
 body::before {
   content: "";
-  position: fixed; /* couvre tout l’écran */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* noir semi-transparent */
-  pointer-events: none; /* pour ne pas bloquer les clics */
-  z-index: 0; /* derrière tout le contenu */
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 0;
 }
 
 body > * {
   position: relative;
-  z-index: 1; /* contenu au-dessus de l’overlay */
+  z-index: 1;
 }
 
-/* ✅ Taille des images dans les cartes d’unité */
+/* ✅ Cartes */
 .unit-card img {
   max-width: 100%;
   height: auto;
-  width: 100px; /* ajustable selon ton besoin */
+  width: 100px;
   margin: 0 auto;
 }
+
 .unit-card {
-  background-color: #1f2937; /* gris foncé */
+  background-color: #1f2937;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  border: 2px solid #374151; /* gris plus clair par défaut */
+  border: 2px solid #374151;
   text-align: center;
   transition: transform 0.2s ease-in-out;
-  width: 110px; /* adapte selon ta préférence */
+  width: 110px;
   height: auto;
   margin: auto;
 }
@@ -51,15 +53,17 @@ body > * {
 .unit-card.selected {
   border-color: #10b981;
   box-shadow: 0 0 10px #10b981;
-  background-color: #f7bc07; /* vert foncé sélectionné */
+  background-color: #064e3b;
 }
 
 .unit-card:hover {
   transform: scale(1.05);
 }
+
+/* ✅ Grille */
 #unit-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-  gap: 0.75rem; /* espace réduit entre les cartes */
+  gap: 0.75rem;
   justify-items: center;
 }
