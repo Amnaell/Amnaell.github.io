@@ -10,6 +10,8 @@ body {
   min-height: 100vh; /* pour s’assurer que le pseudo-élément couvre tout */
 }
 
+background-image: url('https://github.com/Amnaell/BBS-Checklist.github.io/blob/main/css/bg.jpg');
+
 body::before {
   content: "";
   position: fixed; /* couvre tout l’écran */
