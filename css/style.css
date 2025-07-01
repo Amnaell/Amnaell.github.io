@@ -10,9 +10,6 @@ body {
   min-height: 100vh;
 }
 
-/* ✅ Supprimée : ligne incorrecte hors d’un sélecteur */
-/* background-image: url('https://github.com/...'); */
-
 body::before {
   content: "";
   position: fixed;
@@ -39,7 +36,7 @@ body > * {
 }
 
 .unit-card {
-  background-color: #1f2937;
+  background-color: #1f2937; /* gris foncé */
   padding: 0.5rem;
   border-radius: 0.5rem;
   border: 2px solid #374151;
@@ -51,9 +48,9 @@ body > * {
 }
 
 .unit-card.selected {
-  border-color: #d6b009;
-  box-shadow: 0 0 10px #d6b009;
-  background-color: #d6b009;
+  border-color: #FFD700; /* Or */
+  box-shadow: 0 0 10px #FFD700; /* halo doré */
+  background-color: #3b2f05; /* fond plus sombre pour contraste */
 }
 
 .unit-card:hover {
