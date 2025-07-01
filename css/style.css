@@ -34,3 +34,24 @@ body > * {
   width: 100px; /* ajustable selon ton besoin */
   margin: 0 auto;
 }
+.unit-card {
+  background-color: #1f2937; /* gris foncé */
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid #374151; /* gris plus clair par défaut */
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  width: 110px; /* adapte selon ta préférence */
+  height: auto;
+  margin: auto;
+}
+
+.unit-card.selected {
+  border-color: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  background-color: #064e3b; /* vert foncé sélectionné */
+}
+
+.unit-card:hover {
+  transform: scale(1.05);
+}
