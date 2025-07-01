@@ -16,6 +16,7 @@ body {
   background-attachment: fixed;
   color: white;
   min-height: 100vh;
+  padding-top: 160px; /* ajuste la hauteur selon ton header */
 }
 
 body::before {
