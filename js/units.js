@@ -1,4 +1,4 @@
-const baseImageUrl = "https://amnaell.github.io/Images/";
+const baseImageUrl = "https://amnaell.github.io/BBS-Checklist.github.io/Images/";
 
 const units = [
 {
