@@ -8,11 +8,14 @@
   <!-- Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
+  <!-- html2canvas pour capture PNG -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
   <style>
     body {
       position: relative;
       font-family: 'Segoe UI', sans-serif;
-      background-image: url('./css/bg.jpg'); /* plus robuste et relative */
+      background-image: url('./css/bg.jpg'); /* relative pour GitHub Pages */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -66,17 +69,12 @@
       <p id="progressLabel" class="text-sm text-gray-300 mt-1 text-right">0/0 (0%)</p>
     </div>
 
-    <!-- Filtres -->
-    <div class="mb-6">
-      <label for="attributeFilter" class="text-sm font-medium">Filtrer par attribut :</label>
-      <select id="attributeFilter" class="ml-2 px-2 py-1 rounded text-black">
-        <option value="All">Tous</option>
-        <option value="Technique">Technique</option>
-        <option value="Force">Force</option>
-        <option value="Vitesse">Vitesse</option>
-        <option value="Instinct">Instinct</option>
-        <option value="Connaissance">Connaissance</option>
-      </select>
+    <!-- 📌 Boutons d'action -->
+    <div class="mb-6 flex flex-wrap gap-2">
+      <button onclick="exportCollection()" class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded">💾 Exporter</button>
+      <button onclick="importCollection()" class="bg-yellow-600 hover:bg-yellow-700 px-3 py-1 rounded">📥 Importer</button>
+      <button onclick="resetAll()" class="bg-red-600 hover:bg-red-700 px-3 py-1 rounded">🔄 Réinitialiser</button>
+      <button onclick="generateImage()" class="bg-green-600 hover:bg-green-700 px-3 py-1 rounded">📷 Générer une image</button>
     </div>
   </header>
 
@@ -84,12 +82,11 @@
   <main id="unit-list" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"></main>
   <link rel="stylesheet" href="css/style.css">
 
-
   <footer class="mt-8 text-center text-sm text-white-500">
     © <script>document.write(new Date().getFullYear());</script> BBS Checklist – Créé par Amnael & Kira.
   </footer>
 
-  <!-- Scripts nécessaires -->
+  <!-- Scripts -->
   <script src="js/units.js"></script>
   <script src="js/app.js"></script>
 </body>
