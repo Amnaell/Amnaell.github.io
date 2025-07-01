@@ -29,17 +29,14 @@ let currentMode = "default";
 
 function setMode(mode) {
   currentMode = mode;
-
-  // Désactive tous les boutons d'abord
   document.querySelectorAll('.mode-button').forEach(btn => btn.classList.remove('active'));
 
-  // Active le bouton correspondant au mode choisi
   if (mode === 'default') {
-    document.querySelector('.mode-button.bg-gray-600').classList.add('active');
+    document.querySelector('.mode-button:nth-of-type(1)').classList.add('active');
   } else if (mode === 'ft') {
-    document.querySelector('.mode-button.bg-purple-600').classList.add('active');
+    document.querySelector('.mode-button:nth-of-type(2)').classList.add('active');
   } else if (mode === 'spe') {
-    document.querySelector('.mode-button.bg-yellow-500').classList.add('active');
+    document.querySelector('.mode-button:nth-of-type(3)').classList.add('active');
   }
 }
 
