@@ -1,0 +1,119 @@
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem; /* grande taille */
+  text-align: center; /* centré */
+  color: white ; /* rouge Bleach */
+  letter-spacing: 2px; /* espacement stylé */
+}
+
+body {
+  position: relative;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('https://amnaell.github.io/BBS-Checklist.github.io/css/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  min-height: 100vh;
+  padding-top: 160px; /* ajuste la hauteur selon ton header */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ✅ Cartes */
+.unit-card img {
+  max-width: 100%;
+  height: auto;
+  width: 100px;
+  margin: 0 auto;
+}
+
+.unit-card {
+  background-color: #1f2937; /* gris foncé */
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid #374151;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  width: 110px;
+  height: auto;
+  margin: auto;
+  position: relative;
+}
+
+/* ✅ Mode possédé (doré) */
+.unit-card.selected {
+  border-color: #FFD700; /* Or */
+  box-shadow: 0 0 10px #FFD700;
+  background-color: #3b2f05;
+}
+
+/* ✅ Mode FT (violet) */
+.unit-card.ft {
+  border-color: #a855f7;
+  box-shadow: 0 0 10px #a855f7;
+  background-color: #3b0f53;
+}
+
+/* ✅ Cocarde spé */
+.unit-card .spe-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 2px 5px;
+  border-radius: 9999px;
+}
+
+/* ✅ Hover */
+.unit-card:hover {
+  transform: scale(1.05);
+}
+
+/* ✅ Grille */
+#unit-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 0.75rem;
+  justify-items: center;
+}
+
+.mode-button.active {
+  outline: 2px solid white;        /* un contour blanc visible */
+  opacity: 1 !important;           /* pas de transparence */
+  transform: scale(1.05);          /* effet de mise en avant */
+}
+
+/* ✅ Tous les boutons mode gris par défaut */
+.mode-button {
+  background-color: #4b5563; /* gris foncé */
+  color: white;
+  opacity: 1;
+}
+
+/* ✅ Couleur au hover selon l'ordre des boutons */
+.mode-button:hover:nth-of-type(1) { background-color: #2563eb; } /* bleu */
+.mode-button:hover:nth-of-type(2) { background-color: #7e22ce; } /* violet */
+.mode-button:hover:nth-of-type(3) { background-color: #facc15; color: black; } /* jaune */
+
+/* ✅ Quand un bouton est actif : même couleur que le hover */
+.mode-button.active:nth-of-type(1) { background-color: #2563eb; }
+.mode-button.active:nth-of-type(2) { background-color: #7e22ce; }
+.mode-button.active:nth-of-type(3) { background-color: #facc15; color: black; }
