@@ -51,9 +51,11 @@ function toggleFT(id) {
 // 🎮 Incrémentation spé
 function incrementSpec(id) {
   if (!state[id]) state[id] = { owned: false, ft: false, spec: 1 };
+  state[id].owned = true; // ✅ Marque le perso comme possédé
   state[id].spec = state[id].spec >= 5 ? 1 : state[id].spec + 1;
   saveState();
   renderUnits();
+  updateProgress();
 }
 
 // 🧱 Affichage des cartes
