@@ -26,3 +26,11 @@ body > * {
   position: relative;
   z-index: 1; /* contenu au-dessus de l’overlay */
 }
+
+/* ✅ Taille des images dans les cartes d’unité */
+.unit-card img {
+  max-width: 100%;
+  height: auto;
+  width: 100px; /* ajustable selon ton besoin */
+  margin: 0 auto;
+}
