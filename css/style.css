@@ -117,3 +117,14 @@ body > * {
 .mode-button.active:nth-of-type(1) { background-color: #2563eb; }
 .mode-button.active:nth-of-type(2) { background-color: #7e22ce; }
 .mode-button.active:nth-of-type(3) { background-color: #facc15; color: black; }
+
+.unit-card:not(.selected) {
+  filter: brightness(0.4) grayscale(60%);
+  opacity: 0.7;
+  transition: filter 0.2s, opacity 0.2s;
+}
+
+.unit-card.selected {
+  filter: none;
+  opacity: 1;
+}
