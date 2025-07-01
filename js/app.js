@@ -84,7 +84,13 @@ function renderUnits() {
 
     // Supprime les anciens événements : plus de oncontextmenu ni auxclick !
 
-    const badge = unitState.owned ? `<span class="spe-badge">${unitState.spec}</span>` : "";
+    const badgeColorClass = unitState.ft
+  ? "bg-purple-600 text-white" // badge violet avec texte blanc si FT
+  : "bg-yellow-400 text-black"; // badge jaune avec texte noir par défaut
+
+const badge = unitState.owned
+  ? `<span class="spe-badge ${badgeColorClass}">${unitState.spec}</span>`
+  : "";
 
     card.innerHTML = `
       <img src="${unit.image}" alt="${unit.name}" class="mb-1" />
