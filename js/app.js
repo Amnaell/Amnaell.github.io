@@ -24,6 +24,14 @@ function saveState() {
   localStorage.setItem("bbs_unit_state", JSON.stringify(state));
 }
 
+// 🎯 Gestion du mode actif : normal, ft ou spe
+let currentMode = "default";
+
+function setMode(mode) {
+  currentMode = mode;
+  alert(`Mode activé : ${mode === "default" ? "Normal" : mode.toUpperCase()}`);
+}
+
 // ✅ Clic sur un personnage
 function toggleUnit(id) {
   if (!state[id]) state[id] = { owned: false, ft: false, spec: 1 };
@@ -62,10 +70,15 @@ function renderUnits() {
       unitState.owned ? "selected" : ""
     } ${unitState.ft ? "ft" : ""}`;
 
-    card.onclick = () => toggleUnit(unit.id);
-    card.oncontextmenu = (e) => {
-      e.preventDefault();
-      toggleFT(unit.id);
+    // Gère le clic en fonction du mode actuel
+    card.onclick = () => {
+      if (currentMode === "ft") {
+        toggleFT(unit.id);
+      } else if (currentMode === "spe") {
+        incrementSpec(unit.id);
+      } else {
+        toggleUnit(unit.id);
+      }
     };
 
     const badge = unitState.owned ? `<span class="spe-badge">${unitState.spec}</span>` : "";
@@ -74,13 +87,6 @@ function renderUnits() {
       <img src="${unit.image}" alt="${unit.name}" class="mb-1" />
       ${badge}
     `;
-
-    // Click du milieu pour incrémenter spé
-    card.addEventListener("auxclick", (e) => {
-      if (e.button === 1) {
-        incrementSpec(unit.id);
-      }
-    });
 
     container.appendChild(card);
   });
@@ -152,6 +158,16 @@ function importCollection() {
   });
 
   input.click();
+}
+
+// 📷 Générer une image PNG du site
+function generateImage() {
+  html2canvas(document.body).then(canvas => {
+    const link = document.createElement("a");
+    link.download = "bbs_checklist.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+  });
 }
 
 // 🚀 Init
