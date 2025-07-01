@@ -70,7 +70,7 @@ function renderUnits() {
       unitState.owned ? "selected" : ""
     } ${unitState.ft ? "ft" : ""}`;
 
-    // Gère le clic en fonction du mode actuel
+    // Nouveau clic unique géré par currentMode
     card.onclick = () => {
       if (currentMode === "ft") {
         toggleFT(unit.id);
@@ -80,6 +80,8 @@ function renderUnits() {
         toggleUnit(unit.id);
       }
     };
+
+    // Supprime les anciens événements : plus de oncontextmenu ni auxclick !
 
     const badge = unitState.owned ? `<span class="spe-badge">${unitState.spec}</span>` : "";
 
