@@ -93,3 +93,9 @@ body > * {
   gap: 0.75rem;
   justify-items: center;
 }
+
+.mode-button.active {
+  outline: 2px solid white;        /* un contour blanc visible */
+  opacity: 1 !important;           /* pas de transparence */
+  transform: scale(1.05);          /* effet de mise en avant */
+}
