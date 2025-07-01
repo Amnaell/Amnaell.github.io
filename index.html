@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" type="image/png" href="./favicon/icon.png">
+  <link rel="icon" type="image/png" href="./favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <title>BBS Checklist</title>
 
@@ -60,7 +60,7 @@
 
 <body class="text-white min-h-screen p-4">
   <header class="mb-6 sticky top-0 bg-black bg-opacity-80 z-50 p-4 shadow-md transition">
-    <h1 class="text-3xl font-bold text-white">Bleach Brave Souls – Checklist</h1>
+    <h1 class="text-3xl font-bold text-white-400">Bleach Brave Souls – Checklist</h1>
 
     <!-- Barre de progression -->
     <div class="mb-4">
@@ -70,18 +70,8 @@
       <p id="progressLabel" class="text-sm text-gray-300 mt-1 text-right">0/0 (0%)</p>
     </div>
 
-    <!-- 📌 Filtre aligné à gauche -->
-    <div class="mb-6 flex w-full justify-start items-center gap-2">
-      <label for="filterOwned" class="text-sm font-medium">Afficher :</label>
-      <select id="filterOwned" class="px-2 py-1 rounded text-black">
-        <option value="all">Tous</option>
-        <option value="owned">Cochés uniquement</option>
-        <option value="unowned">Non cochés uniquement</option>
-      </select>
-    </div>
-
-    <!-- 📌 Boutons d'action centrés -->
-    <div class="mb-6 flex flex-wrap justify-center gap-2">
+    <!-- 📌 Boutons d'action -->
+    <div class="mb-6 flex flex-wrap justify-center">
       <button onclick="setMode('default')" class="mode-button text-white px-3 py-1 rounded transition">🖌️ Mode Normal</button>
       <button onclick="setMode('ft')" class="mode-button text-white px-3 py-1 rounded transition">✨ FT Mode</button>
       <button onclick="setMode('spe')" class="mode-button text-white px-3 py-1 rounded transition">🔝 Spe Mode</button>
