@@ -73,6 +73,24 @@ function incrementSpec(id) {
 function renderUnits() {
   const container = document.getElementById("unit-list");
   container.innerHTML = "";
+function renderUnits() {
+  const container = document.getElementById("unit-list");
+  container.innerHTML = "";
+
+  const filter = document.getElementById("filterOwned").value;
+
+  let filteredUnits = units;
+
+  if (filter === "owned") {
+    filteredUnits = units.filter(unit => state[unit.id]?.owned);
+  } else if (filter === "unowned") {
+    filteredUnits = units.filter(unit => !state[unit.id]?.owned);
+  }
+
+  filteredUnits.forEach(unit => {
+    ...
+  });
+}
 
   units.forEach(unit => {
     const unitState = state[unit.id] || { owned: false, ft: false, spec: 1 };
@@ -182,6 +200,11 @@ function importCollection() {
 
 // 🚀 Init
 window.addEventListener("DOMContentLoaded", () => {
+  renderUnits();
+  updateProgress();
+});
+
+document.getElementById("filterOwned").addEventListener("change", () => {
   renderUnits();
   updateProgress();
 });
