@@ -52,8 +52,8 @@ body > * {
 
 .unit-card.selected {
   border-color: #d6b009;
-  box-shadow: 0 0 10px #10b981;
-  background-color: #064e3b;
+  box-shadow: 0 0 10px #d6b009;
+  background-color: #d6b009;
 }
 
 .unit-card:hover {
