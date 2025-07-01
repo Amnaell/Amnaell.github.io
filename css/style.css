@@ -1,3 +1,11 @@
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem; /* grande taille */
+  text-align: center; /* centré */
+  color: #e3342f; /* rouge Bleach */
+  letter-spacing: 2px; /* espacement stylé */
+}
+
 body {
   position: relative;
   font-family: 'Segoe UI', sans-serif;
