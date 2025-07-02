@@ -95,28 +95,58 @@ body > * {
   justify-items: center;
 }
 
+/* ✅ Boutons de mode */
 .mode-button.active {
   outline: 2px solid white;        /* un contour blanc visible */
   opacity: 1 !important;           /* pas de transparence */
   transform: scale(1.05);          /* effet de mise en avant */
 }
 
-/* ✅ Tous les boutons mode gris par défaut */
 .mode-button {
   background-color: #4b5563; /* gris foncé */
   color: white;
   opacity: 1;
 }
 
-/* ✅ Couleur au hover selon l'ordre des boutons */
 .mode-button:hover:nth-of-type(1) { background-color: #2563eb; } /* bleu */
 .mode-button:hover:nth-of-type(2) { background-color: #7e22ce; } /* violet */
 .mode-button:hover:nth-of-type(3) { background-color: #facc15; color: black; } /* jaune */
 
-/* ✅ Quand un bouton est actif : même couleur que le hover */
 .mode-button.active:nth-of-type(1) { background-color: #2563eb; }
 .mode-button.active:nth-of-type(2) { background-color: #7e22ce; }
 .mode-button.active:nth-of-type(3) { background-color: #facc15; color: black; }
+
+/* ✅ Boutons de filtre "Tous/Possédés/Non possédés" */
+.filter-owned-button {
+  background-color: #4b5563; /* même gris que mode-button */
+  color: white;
+  opacity: 1;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+/* ✅ Hover et actif bouton "Tous" */
+.filter-owned-button:nth-of-type(1):hover,
+.filter-owned-button.active:nth-of-type(1) {
+  background-color: #2563eb; /* bleu identique au mode normal */
+}
+
+/* ✅ Hover et actif bouton "Possédés" */
+.filter-owned-button:nth-of-type(2):hover,
+.filter-owned-button.active:nth-of-type(2) {
+  background-color: #16a34a; /* vert */
+}
+
+/* ✅ Hover et actif bouton "Non possédés" */
+.filter-owned-button:nth-of-type(3):hover,
+.filter-owned-button.active:nth-of-type(3) {
+  background-color: #dc2626; /* rouge */
+}
+
+/* ✅ Bouton actif : même effet que les boutons mode */
+.filter-owned-button.active {
+  outline: 2px solid white;
+  transform: scale(1.05);
+}
 
 .unit-card:not(.selected) {
   filter: brightness(0.4) grayscale(60%);
@@ -127,4 +157,19 @@ body > * {
 .unit-card.selected {
   filter: none;
   opacity: 1;
+}
+
+#progressBar {
+  height: 1rem;
+  border-radius: 0.5rem;
+  transition: width 0.8s ease-in-out;
+  background: linear-gradient(270deg, #a855f7, #7e22ce, #a855f7);
+  background-size: 600% 600%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
