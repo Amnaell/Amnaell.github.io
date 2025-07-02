@@ -18,6 +18,7 @@ for (let i = 1; i <= 774; i++) {
 
 // 📦 Chargement des états depuis localStorage
 let state = JSON.parse(localStorage.getItem("bbs_unit_state")) || {};
+let ownedFilter = "all"; // "all", "owned", "notOwned"
 
 // 🔁 Sauvegarde
 function saveState() {
@@ -69,20 +70,27 @@ function incrementSpec(id) {
   updateProgress();
 }
 
-// 🧱 Affichage des cartes
+// 🧱 Affichage des cartes avec filtres
 function renderUnits() {
   const container = document.getElementById("unit-list");
   container.innerHTML = "";
 
-  units.forEach(unit => {
+  let filteredUnits = [...units];
+
+  // ➕ Appliquer le filtre ownedFilter
+  filteredUnits = filteredUnits.filter(unit => {
+    const unitState = state[unit.id] || { owned: false, ft: false, spec: 1 };
+    if (ownedFilter === "owned") return unitState.owned;
+    if (ownedFilter === "notOwned") return !unitState.owned;
+    return true; // "all"
+  });
+
+  filteredUnits.forEach(unit => {
     const unitState = state[unit.id] || { owned: false, ft: false, spec: 1 };
     const card = document.createElement("div");
 
-    card.className = `unit-card cursor-pointer ${
-      unitState.owned ? "selected" : ""
-    } ${unitState.ft ? "ft" : ""}`;
+    card.className = `unit-card cursor-pointer ${unitState.owned ? "selected" : ""} ${unitState.ft ? "ft" : ""}`;
 
-    // Nouveau clic unique géré par currentMode
     card.onclick = () => {
       if (currentMode === "ft") {
         toggleFT(unit.id);
@@ -93,15 +101,13 @@ function renderUnits() {
       }
     };
 
-    // Supprime les anciens événements : plus de oncontextmenu ni auxclick !
-
     const badgeColorClass = unitState.ft
-  ? "bg-purple-600 text-white" // badge violet avec texte blanc si FT
-  : "bg-yellow-400 text-black"; // badge jaune avec texte noir par défaut
+      ? "bg-purple-600 text-white"
+      : "bg-yellow-400 text-black";
 
-const badge = unitState.owned
-  ? `<span class="spe-badge ${badgeColorClass}">${unitState.spec}</span>`
-  : "";
+    const badge = unitState.owned
+      ? `<span class="spe-badge ${badgeColorClass}">${unitState.spec}</span>`
+      : "";
 
     card.innerHTML = `
       <img src="${unit.image}" alt="${unit.name}" class="mb-1" />
@@ -180,8 +186,23 @@ function importCollection() {
   input.click();
 }
 
-// 🚀 Init
+// 🚀 Init + attacher les boutons de filtre possédé
 window.addEventListener("DOMContentLoaded", () => {
   renderUnits();
   updateProgress();
+
+  document.querySelectorAll(".filter-owned-button").forEach((button, index) => {
+    button.addEventListener("click", () => {
+      // Déterminer le filtre selon le bouton cliqué
+      if (index === 0) ownedFilter = "all";
+      else if (index === 1) ownedFilter = "owned";
+      else if (index === 2) ownedFilter = "notOwned";
+
+      // Mettre à jour l’état actif visuel
+      document.querySelectorAll(".filter-owned-button").forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      renderUnits();
+    });
+  });
 });
