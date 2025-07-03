@@ -1522,7 +1522,7 @@ const units = [
 },
 {
   id: 218,
-  name: "Toshiro",
+  name: "Toshiro (Val)",
   attribute: "Force",
   rarity: "6★",
   image: baseImageUrl + "218.png"
