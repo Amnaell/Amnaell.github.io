@@ -1747,6 +1747,7 @@ const units = [
 {
   id: 250,
   name: "Ying/Yang",
+  name: "Yang/Ying",
   attribute: "Force",
   rarity: "6★",
   image: baseImageUrl + "250.png"
@@ -1922,6 +1923,7 @@ const units = [
 {
   id: 275,
   name: "Homura/Shizuku",
+  name: "Shizuku/Homura",
   attribute: "Instinct",
   rarity: "6★",
   image: baseImageUrl + "275.png"
@@ -2727,6 +2729,7 @@ const units = [
 {
   id: 390,
   name: "Kiyone/Sentaro",
+  name: "Sentaro/Kiyone",
   attribute: "Vitesse",
   rarity: "6★",
   image: baseImageUrl + "390.png"
