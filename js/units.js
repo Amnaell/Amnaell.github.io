@@ -5372,7 +5372,7 @@ const units = [
 },
 {
   id: 768,
-  name: "Gon",
+  name: "Kon",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "768.png"
