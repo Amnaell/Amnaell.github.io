@@ -4707,7 +4707,7 @@ const units = [
 },
 {
   id: 673,
-  name: "Rukia",
+  name: "Rukia (Kira)",
   attribute: "Force",
   rarity: "6★",
   image: baseImageUrl + "673.png"
