@@ -3529,7 +3529,6 @@ const units = [
 {
   id: 504,
   name: "Soi Fon/Yoruichi (Amnael & Skillah)",
-  name: "Yoruichi/Soi Fon,
   attribute: "Connaissance",
   rarity: "6★",
   image: baseImageUrl + "504.png"
