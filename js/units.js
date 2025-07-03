@@ -3006,7 +3006,7 @@ const units = [
 },
 {
   id: 430,
-  name: "Kenpachi",
+  name: "Kyoraku",
   attribute: "Force",
   rarity: "6★",
   image: baseImageUrl + "430.png"
