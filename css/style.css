@@ -1,0 +1,304 @@
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  color: white;
+  letter-spacing: 2px;
+}
+
+body {
+  position: relative;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('https://amnaell.github.io/BBS-Checklist.github.io/css/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  min-height: 100vh;
+  padding-top: 160px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ✅ Cartes */
+.unit-card img {
+  max-width: 100%;
+  height: auto;
+  width: 100px;
+  margin: 0 auto;
+}
+
+.unit-card {
+  background-color: #1f2937;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid #374151;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  width: 110px;
+  margin: auto;
+  position: relative;
+}
+
+.unit-card.selected {
+  border-color: #FFD700;
+  box-shadow: 0 0 10px #FFD700;
+  background-color: #3b2f05;
+}
+
+.unit-card.ft {
+  border-color: #a855f7;
+  box-shadow: 0 0 10px #a855f7;
+  background-color: #3b0f53;
+}
+
+.unit-card .spe-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 2px 5px;
+  border-radius: 9999px;
+}
+
+.unit-card:hover {
+  transform: scale(1.05);
+}
+
+#unit-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 0.75rem;
+  justify-items: center;
+}
+
+/* ✅ Uniformisation arrondi boutons */
+.mode-button,
+.filter-owned-button,
+#dropdownFilterBtn,
+#dropdownAttributeBtn,
+#dropdownFilterMenu button,
+#dropdownAttributeMenu button {
+  border-radius: 0.5rem; /* même arrondi partout */
+}
+
+/* ✅ Boutons de mode */
+.mode-button.active {
+  outline: 2px solid white;
+  opacity: 1 !important;
+  transform: scale(1.05);
+}
+
+.mode-button {
+  background-color: #4b5563;
+  color: white;
+  opacity: 1;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.mode-button:hover:nth-of-type(1) { background-color: #2563eb; }
+.mode-button:hover:nth-of-type(2) { background-color: #7e22ce; }
+.mode-button:hover:nth-of-type(3) { background-color: #facc15; color: black; }
+
+.mode-button.active:nth-of-type(1) { background-color: #2563eb; }
+.mode-button.active:nth-of-type(2) { background-color: #7e22ce; }
+.mode-button.active:nth-of-type(3) { background-color: #facc15; color: black; }
+
+/* ✅ Boutons filtres possédés */
+.filter-owned-button {
+  background-color: #4b5563;
+  color: white;
+  opacity: 1;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.filter-owned-button:nth-of-type(1):hover,
+.filter-owned-button.active:nth-of-type(1) {
+  background-color: #2563eb;
+}
+
+.filter-owned-button:nth-of-type(2):hover,
+.filter-owned-button.active:nth-of-type(2) {
+  background-color: #16a34a;
+}
+
+.filter-owned-button:nth-of-type(3):hover,
+.filter-owned-button.active:nth-of-type(3) {
+  background-color: #dc2626;
+}
+
+.filter-owned-button.active {
+  outline: 2px solid white;
+  transform: scale(1.05);
+}
+
+/* ✅ Unit cards : désaturées si non possédées */
+.unit-card:not(.selected) {
+  filter: brightness(0.4) grayscale(60%);
+  opacity: 0.7;
+  transition: filter 0.2s, opacity 0.2s;
+}
+
+.unit-card.selected {
+  filter: none;
+  opacity: 1;
+}
+
+/* ✅ ProgressBar */
+#progressBar {
+  height: 1rem;
+  border-radius: 0.5rem;
+  transition: width 0.8s ease-in-out;
+  background: linear-gradient(270deg, #a855f7, #7e22ce, #a855f7);
+  background-size: 600% 600%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ✅ Barre de recherche */
+#searchInput {
+  background-color: #1f2937;
+  color: white;
+  border: 2px solid #374151;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  max-width: 400px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#searchInput::placeholder {
+  color: #9ca3af;
+}
+
+#searchInput:focus {
+  outline: none;
+  border-color: #a855f7;
+  box-shadow: 0 0 10px #a855f7;
+}
+
+/* ✅ Dropdown Filter menu */
+#dropdownFilterBtn,
+#dropdownFilterMenu {
+  background-color: #4b5563;
+  color: white;
+}
+
+#dropdownFilterMenu {
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+#dropdownFilterMenu button {
+  text-align: left;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  background-color: #374151;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+#dropdownFilterMenu button:hover {
+  background-color: #6b7280;
+  transform: scale(1.02);
+}
+
+#dropdownFilterMenu button:active,
+#dropdownFilterMenu button.active {
+  background-color: #7e22ce;
+  outline: 2px solid white;
+  transform: scale(1.05);
+}
+
+/* ✅ Dropdown Attribute menu */
+#dropdownAttributeBtn,
+#dropdownAttributeMenu {
+  background-color: #4b5563;
+  color: white;
+}
+
+#dropdownAttributeMenu {
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+#dropdownAttributeMenu button {
+  text-align: left;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  background-color: #374151;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+#dropdownAttributeMenu button:hover {
+  background-color: #6b7280;
+  transform: scale(1.02);
+}
+
+#dropdownAttributeMenu button:active,
+#dropdownAttributeMenu button.active {
+  background-color: #7e22ce;
+  outline: 2px solid white;
+  transform: scale(1.05);
+}
+
+/* ✅ Boutons Exporter, Importer, Réinitialiser */
+header button:not(.mode-button):not(.filter-owned-button):not(#dropdownFilterBtn):not(#dropdownAttributeBtn) {
+  border-radius: 0.5rem; /* même arrondi */
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+/* Hover plus sombre */
+header button:not(.mode-button):not(.filter-owned-button):not(#dropdownFilterBtn):not(#dropdownAttributeBtn):hover {
+  transform: scale(1.05);
+  background-color: #111827; /* gris très foncé au hover */
+}
+
+header button:not(.mode-button):not(.filter-owned-button):not(#dropdownFilterBtn):not(#dropdownAttributeBtn):active {
+  background-color: #a855f7; /* violet au clic */
+}
+
+/* ✅ Hover des boutons dropdown (Filtres & Affinités) */
+#dropdownFilterBtn:hover,
+#dropdownAttributeBtn:hover {
+  background-color: #111827; /* même gris très foncé que les autres boutons */
+  transform: scale(1.05);
+}
+
+#dropdownFilterBtn:active,
+#dropdownAttributeBtn:active {
+  background-color: #a855f7; /* violet au clic pour la cohérence */
+}
+
+/* ✅ Animation hover pour boutons de mode */
+.mode-button:hover {
+  transform: scale(1.05); /* même zoom que tes dropdowns */
+}
+
+/* ✅ Optionnel : clic visuel */
+.mode-button:active {
+  transform: scale(0.95);
+}
