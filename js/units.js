@@ -2979,6 +2979,7 @@ const units = [
 {
   id: 426,
   name: "Gin/Izuru",
+  name: "Izuru/Gin",
   attribute: "Technique",
   rarity: "6★",
   image: baseImageUrl + "426.png"
@@ -3525,6 +3526,7 @@ const units = [
 {
   id: 504,
   name: "Soi Fon/Yoruichi (Amnael & Skillah)",
+  name: "Yoruichi/Soi Fon,
   attribute: "Connaissance",
   rarity: "6★",
   image: baseImageUrl + "504.png"
