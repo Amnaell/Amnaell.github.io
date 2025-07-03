@@ -71,11 +71,16 @@ function renderUnits() {
     );
   }
 
-  // ➕ Filtre recherche
+  // ➕ Filtre recherche avec début de mots
   if (searchTerm.trim() !== "") {
-    filteredUnits = filteredUnits.filter(unit =>
-      unit.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    const searchLower = searchTerm.toLowerCase();
+
+    filteredUnits = filteredUnits.filter(unit => {
+      const nameLower = unit.name.toLowerCase();
+      const words = nameLower.split(/\s+/);
+
+      return words.some(word => word.startsWith(searchLower));
+    });
   }
 
   filteredUnits.forEach(unit => {
