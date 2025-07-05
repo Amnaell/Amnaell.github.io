@@ -70,12 +70,21 @@ body > * {
 
 .unit-card .spe-badge {
   position: absolute;
-  top: 6px;
-  right: 6px;
-  font-size: 0.7rem;
+  top: -4px;       /* la remonter légèrement */
+  right: -4px;     /* la décaler un peu vers la gauche */
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
   font-weight: bold;
-  padding: 2px 5px;
-  border-radius: 9999px;
+  color: white;
+  text-shadow: 0 0 2px black;
+  border-radius: 50%;
+  background: black;                    /* fond noir classique */
+  border: 2px solid #ffffffcc;          /* léger contour blanc semi-transparent */
+  box-sizing: border-box;
 }
 
 .unit-card:hover {
