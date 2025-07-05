@@ -1,16 +1,13 @@
 // 📦 Chargement des états depuis localStorage
 let state = JSON.parse(localStorage.getItem("bbs_character_state")) || {};
+
 function saveState() {
   localStorage.setItem("bbs_character_state", JSON.stringify(state));
 }
+
 let ownedFilter = "all";
 let attributeFilter = "all";
 let searchTerm = "";
-
-// 🔁 Sauvegarde
-function saveState() {
-  localStorage.setItem("bbs_unit_state", JSON.stringify(state));
-}
 
 // 🎯 Gestion du mode actif
 let currentMode = "default";
@@ -77,11 +74,9 @@ function renderUnits() {
   // ➕ Filtre recherche avec début de mots
   if (searchTerm.trim() !== "") {
     const searchLower = searchTerm.toLowerCase();
-
     filteredUnits = filteredUnits.filter(unit => {
       const nameLower = unit.name.toLowerCase();
       const words = nameLower.split(/\s+/);
-
       return words.some(word => word.startsWith(searchLower));
     });
   }
@@ -108,6 +103,8 @@ function renderUnits() {
 
     container.appendChild(card);
   });
+
+  updateAffinityCounts();
 }
 
 // 📊 Barre de progression
@@ -121,6 +118,31 @@ function updateProgress() {
 
   progressBar.style.width = `${percent}%`;
   progressLabel.textContent = `${owned}/${total} (${percent}%)`;
+}
+
+// 📊 Compteur possédés par affinité
+function updateAffinityCounts() {
+  const counts = {};
+
+  units.forEach(unit => {
+    const unitState = state[unit.id] || { owned: false };
+    const attr = unit.attribute ? unit.attribute.toLowerCase() : "inconnu";
+
+    if (!counts[attr]) counts[attr] = { total: 0, owned: 0 };
+    counts[attr].total++;
+    if (unitState.owned) counts[attr].owned++;
+  });
+
+  const affinityContainer = document.getElementById("affinity-stats");
+  if (affinityContainer) {
+    affinityContainer.innerHTML = Object.entries(counts).map(([attr, data]) => {
+      return `<span>${capitalize(attr)} : ${data.owned}/${data.total}</span>`;
+    }).join(" | ");
+  }
+}
+
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 // 🔄 Reset
@@ -141,7 +163,7 @@ function exportCollection() {
 
   const a = document.createElement("a");
   a.href = url;
-  a.download = "bbs_collection.json";
+  a.download = "bbs_characters_collection.json";
   a.click();
   URL.revokeObjectURL(url);
 }
@@ -181,7 +203,6 @@ window.addEventListener("DOMContentLoaded", () => {
   renderUnits();
   updateProgress();
 
-  // Boutons de filtre possédé
   document.querySelectorAll(".filter-owned-button").forEach((button, index) => {
     button.addEventListener("click", () => {
       ownedFilter = index === 0 ? "all" : index === 1 ? "owned" : "notOwned";
@@ -191,12 +212,10 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Boutons de filtre attribute avec couleur dynamique
   document.querySelectorAll(".filter-attribute-button").forEach((button) => {
     button.addEventListener("click", () => {
       attributeFilter = button.getAttribute("data-attribute").toLowerCase();
 
-      // Réinitialiser tous les boutons attributs
       document.querySelectorAll(".filter-attribute-button").forEach(btn => {
         btn.classList.remove(
           "bg-green-600", "bg-purple-900", "bg-red-600", "bg-blue-500", "bg-yellow-800", "bg-gray-500"
@@ -204,7 +223,6 @@ window.addEventListener("DOMContentLoaded", () => {
         btn.classList.add("bg-gray-800");
       });
 
-      // Appliquer la couleur selon l'attribut sélectionné
       let activeColor = "bg-gray-500"; // par défaut pour "all"
       if (attributeFilter === "technique") activeColor = "bg-green-600";
       else if (attributeFilter === "instinct") activeColor = "bg-purple-900";
@@ -219,7 +237,6 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Barre de recherche
   const searchInput = document.getElementById("search-input");
   if (searchInput) {
     searchInput.addEventListener("input", (e) => {
