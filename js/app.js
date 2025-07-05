@@ -1,5 +1,8 @@
 // 📦 Chargement des états depuis localStorage
-let state = JSON.parse(localStorage.getItem("bbs_unit_state")) || {};
+let state = JSON.parse(localStorage.getItem("bbs_character_state")) || {};
+function saveState() {
+  localStorage.setItem("bbs_character_state", JSON.stringify(state));
+}
 let ownedFilter = "all";
 let attributeFilter = "all";
 let searchTerm = "";
