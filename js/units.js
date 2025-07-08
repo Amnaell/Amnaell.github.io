@@ -5424,4 +5424,25 @@ const units = [
   rarity: "6★",
   image: baseImageUrl + "774.png"
 },
+{
+  id: 775,
+  name: "Yoruichi",
+  attribute: "Vitesse",
+  rarity: "6★",
+  image: baseImageUrl + "775.png"
+},
+{
+  id: 776,
+  name: "Liltotto",
+  attribute: "Instinct",
+  rarity: "6★",
+  image: baseImageUrl + "776.png"
+},
+{
+  id: 777,
+  name: "Masaki",
+  attribute: "Connaissance",
+  rarity: "6★",
+  image: baseImageUrl + "777.png"
+},
   ]
